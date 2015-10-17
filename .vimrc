@@ -104,3 +104,115 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=/Users/arska/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('/Users/arska/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+"" Dependency for vim-textobj-rubyblock and other custom textobj plugins
+NeoBundle 'kana/vim-textobj-user'
+
+""" Utility
+NeoBundle 'DataWraith/auto_mkdir'
+NeoBundle 'FelikZ/ctrlp-py-matcher'
+NeoBundle 'SearchHighlighting', {'depends': ['ingo-library']}
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'netrw.vim'
+NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'xolox/vim-notes', {'depends': ['xolox/vim-misc']}
+
+""" Editor functionality
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'UltiSnips'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'tommcdo/vim-exchange'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/ZoomWin'
+
+""" Ruby
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-rvm'
+
+NeoBundle 'ecomba/vim-ruby-refactoring'
+NeoBundle 'ruby-matchit'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'vim-ruby/vim-ruby'
+
+""" Scala
+NeoBundle 'derekwyatt/vim-scala'
+
+""" Go
+NeoBundle 'fatih/vim-go'
+
+""" Rust
+NeoBundle 'rust-lang/rust.vim'
+
+""" JS
+NeoBundle 'JSON.vim'
+
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
+""" HTML/CSS
+NeoBundle 'gregsexton/MatchTag'
+NeoBundle 'othree/html5-syntax.vim'
+
+""" Misc
+NeoBundle 'puppetlabs/puppet-syntax-vim'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'suan/vim-instant-markdown'
+
+""" Looks
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
+
