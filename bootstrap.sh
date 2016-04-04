@@ -5,7 +5,7 @@ RSYNCCMD="rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh"
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-#git pull origin master;
+git pull origin master;
 
 function diffIt() {
   FILES=$($RSYNCCMD -n | grep -v "building file list" | grep -v "sent .* bytes" | grep -v "total size is ") #run in dry-run mode and list the files
