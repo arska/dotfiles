@@ -144,3 +144,6 @@ alias reload="exec $SHELL -l"
 # activate python virtualenv
 alias venv="source venv/bin/activate"
 
+# I want top to order by CPU usage by default
+alias top="top -u"
+
