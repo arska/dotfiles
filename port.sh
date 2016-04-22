@@ -18,3 +18,5 @@ sudo port select --set python3 python35
 sudo port select --set python2 python27
 
 sudo port install vim +huge +python35 +python27
+
+sudo pip install virtualenv
