@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
 
-RSYNCCMD="rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-      --exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~"
+RSYNCCMD=(
+  rsync
+  --exclude .git/
+  --exclude .DS_Store
+  --exclude bootstrap.sh
+  --exclude README.md
+  --exclude LICENSE-MIT.txt
+  -avh
+  --no-perms
+  .
+  $HOME/
+)
 
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
 function diffIt() {
-  FILES=$($RSYNCCMD -n | grep -v "building file list" | grep -v "sent .* bytes" | grep -v "total size is ") #run in dry-run mode and list the files
+  FILES=$(${RSYNCCMD[@]} -n | grep -v "building file list" | grep -v "sent .* bytes" | grep -v "total size is ") #run in dry-run mode and list the files
   for f in $FILES; do
     if [ -f "$f" ] ; then
       diff -urN ./$f ~/$f
@@ -17,7 +27,7 @@ function diffIt() {
 }
 
 function doIt() {
-  $RSYNCCMD
+  ${RSYNCCMD[@]}
   source ~/.bash_profile;
   # bootstrap vim neobundle
   if [ ! -d ~/.vim/bundle/neobundle.vim ] ; then
