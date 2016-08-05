@@ -19,10 +19,10 @@ sudo port select --set python2 python27
 
 sudo port install vim +huge +python35 +python27
 
-sudo pip install virtualenv
+sudo -H pip install virtualenv
 
 if [ "0" -eq  "$(fgrep -c /opt/local/bin/bash /etc/shells)" ] ; then
-  echo /opt/local/bin/bash >> /etc/shells
+  sudo bash -c "(echo /opt/local/bin/bash >> /etc/shells)"
 fi
 
 chsh -s /opt/local/bin/bash
