@@ -56,6 +56,7 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # add openshift oc completion
+oc completion bash > ~/bin/oc.bashcompletion
 if [ -f ~/bin/oc.bashcompletion ] ; then
   source ~/bin/oc.bashcompletion
 fi
