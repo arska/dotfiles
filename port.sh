@@ -11,13 +11,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo port selfupdate
 sudo port upgrade outdated
 
-sudo port install coreutils moreutils findutils bash bash-completion git-flow-bash-completion wget screen pwgen tcpdump aircrack-ng binutils binwalk dns2tcp fcrackzip nmap socat tcptrace mtr git git-lfs python35 python27 mplayer ipcalc ipv6calc pv mtr py27-readline py35-readline
+sudo port install coreutils moreutils findutils bash bash-completion git-flow-bash-completion wget screen pwgen tcpdump aircrack-ng binutils binwalk dns2tcp fcrackzip nmap socat tcptrace mtr git git-lfs python35 python27 mplayer ipcalc ipv6calc pv mtr py27-readline py35-readline python36 py36-readline
 
-sudo port select --set python python35
-sudo port select --set python3 python35
+sudo port select --set python python36
+sudo port select --set python3 python36
 sudo port select --set python2 python27
 
-sudo port install vim +huge +python35 +python27
+sudo port install vim +huge +python36 +python27
 
 sudo -H pip install virtualenv
 
