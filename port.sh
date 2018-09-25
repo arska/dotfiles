@@ -20,7 +20,7 @@ sudo port select --set pip pip36
 
 sudo port install vim +huge +python36 +python27
 
-sudo -H pip install virtualenv
+sudo -H pip install virtualenv black pip-tools
 
 if [ "0" -eq  "$(fgrep -c /opt/local/bin/bash /etc/shells)" ] ; then
   sudo bash -c "(echo /opt/local/bin/bash >> /etc/shells)"
