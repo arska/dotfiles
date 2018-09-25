@@ -6,6 +6,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export DISPLAY=:0.0
 
+# python 3.6 scripts
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin/:$PATH
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
