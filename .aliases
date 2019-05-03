@@ -147,3 +147,6 @@ alias venv="source venv/bin/activate"
 # I want top to order by CPU usage by default
 alias top="top -u"
 
+# inetutils installs telnet as gtelnet by default
+alias telnet="gtelnet"
+
