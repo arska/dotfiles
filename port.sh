@@ -35,6 +35,7 @@ if [[ -f ~/bin/oc && $(oc version | head -n 1) -eq "oc v3.9.0+191fece" ]] ; then
 else
   # update OpenShift client oc and bash completion
 wget -O ~/bin/oc.zip https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-mac.zip
+  cd ~/bin/
   unzip ~/bin/oc.zip
   chmod +x ~/bin/oc
   ~/bin/oc completion bash > ~/bin/oc.bashcompletion
