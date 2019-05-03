@@ -29,7 +29,13 @@ fi
 chsh -s /opt/local/bin/bash
 
 # update OpenShift client oc and bash completion
-wget -O ~/bin/oc https://console.appuio.ch/console/extensions/clients/macosx/oc
-chmod +x ~/bin/oc
-~/bin/oc completion bash > ~/bin/oc.bashcompletion
 
+if [[ -f ~/bin/oc && $(oc version | head -n 1) -eq "oc v3.9.0+191fece" ]] ; then
+  echo oc already installed
+else
+  # update OpenShift client oc and bash completion
+wget -O ~/bin/oc.zip https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-mac.zip
+  unzip ~/bin/oc.zip
+  chmod +x ~/bin/oc
+  ~/bin/oc completion bash > ~/bin/oc.bashcompletion
+fi
