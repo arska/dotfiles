@@ -11,7 +11,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo port selfupdate
 sudo port upgrade outdated
 
-sudo port -N install coreutils moreutils findutils bash bash-completion git-flow-bash-completion wget screen pwgen tcpdump aircrack-ng parallel binwalk dns2tcp fcrackzip nmap socat tcptrace mtr git git-lfs python35 python27 mplayer ipcalc ipv6calc pv mtr py27-gnureadline py35-gnureadline py27-pip py35-pip python36 py36-gnureadline py36-pip inetutils python34 py34-pip py34-gnureadline
+sudo port -N install coreutils moreutils findutils bash bash-completion git-flow-bash-completion wget screen pwgen tcpdump aircrack-ng parallel binwalk dns2tcp fcrackzip nmap socat tcptrace mtr git git-lfs python35 python27 mplayer ipcalc ipv6calc pv mtr py27-gnureadline py35-gnureadline py27-pip py35-pip python36 py36-gnureadline py36-pip inetutils python34 py34-pip py34-gnureadline mosh
 
 sudo port select --set python python36
 sudo port select --set python3 python36
